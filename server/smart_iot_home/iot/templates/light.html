@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}   
+
+<div class="container">
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm" >
+
+    <form method="post" action=".">
+      
+        <a href="../../"><img class="mr-3 mt-3" src="/static/left_arrow.png" alt="" width="48" height="48"></a>
+    </form>
+    
+  </div>
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Lighting</h6>
+    <form method="post" class="form-inline">
+      {% csrf_token %}
+      {% if led_state ==  1 %}
+        <button class="btn btn-outline-white mt-3 signout" id="lighton" type="submit" name="light" value="1">
+          <img src="/static/lighton.png" alt="">
+        </button>
+        <h1>light on</h1>
+      {% else %}
+        <button class="btn btn-outline-white mt-3 signout" id="lightoff" type="submit" name="light" value="0">
+          <img src="/static/lightoff.png" alt="">
+        </button>
+        <h1>light off</h1>
+      {% endif %}
+    </form>
+  </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="offcanvas.js"></script>
+
+
+{% endblock %}

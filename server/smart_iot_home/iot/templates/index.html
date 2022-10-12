@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}   
+
+<div class="container">
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded shadow-sm" >
+
+    <form method="post" class="form-inline">
+      {% csrf_token %}
+      <button class="btn btn-outline-info mt-3 signout" id="signout" type="submit" name="signout" value="signout">sign out</button>
+    </form>
+    
+  </div>
+
+
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <h6 class="border-bottom border-gray pb-2 mb-0">State</h6>
+    <div class="media text-muted pt-3">
+      
+      <a href="iot/temp/"><img src="/static/temp_hum_icon.png" width="32" height="32" alt="" style="margin-right: 15px;"></a>
+      
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">Temp/Hum</strong>
+        It measures the temperature and humidity of the current house to ensure the optimal home environment.
+      </p>
+    </div>
+    <div class="media text-muted pt-3">
+        <a href="iot/light/"><img src="/static/light.png" width="32" height="32" alt="" style="margin-right: 15px;"></a>
+        
+        
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+          <strong class="d-block text-gray-dark">Light</strong>
+          It controls the smart lighting in the house to make you feel a smarter environment.
+        </p>
+      </div>
+      <div class="media text-muted pt-3">
+        <a href="iot/alert/"><img src="/static/blue_alert.png" width="32" height="32" alt="" style="margin-right: 15px;"></a>
+        
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+          <strong class="d-block text-gray-dark">Alert</strong>
+          It helps prevent damage in advance by checking if there are intruders in the house.
+        </p>
+      </div>
+  </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="offcanvas.js"></script>
+
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}   
+<div class="container">
+  <div class="py-5 text-center">
+    <a href="../"><img class="d-block mx-auto mb-4" src="/static/iot_icon.png" alt="" width="72" height="72"></a>
+    <h2>Sign up</h2>
+    
+  </div>
+
+  <div class="row">
+    <div class="offset-3 col-6 offset-3">
+      <h1 class="text-center text-danger" >{{ error }}</h1>
+      
+      <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" required>
+          
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email </label>
+          <input type="email" class="form-control" id="email" name="email" required>
+          
+        </div>
+
+        <div class="mb-3">
+          <label for="password">password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+          
+        </div>
+
+        <div class="mb-3">
+          <label for="password-again">password again</label>
+          <input type="password" class="form-control" id="password-again" name="password-again" required>
+        </div>
+
+
+        <hr class="mb-4">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="same-address">
+          <label class="custom-control-label" for="same-address">Send me occasional product updates, announcements, and offers.</label>
+        </div>
+        <hr class="mb-4">
+
+        
+
+        <hr class="mb-4">
+        <button class="btn btn-outline-info btn-lg btn-block" type="submit">Create account</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">Copyright &copy; 2020 by Smart IOT Hub</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+{% endblock %}
